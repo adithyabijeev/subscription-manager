@@ -18,7 +18,7 @@ function LoginPage({ onLogin, onGoRegister }) {
     try {
       const res = await loginUser(username, password);
       localStorage.setItem('token', res.data.token);
-      localStorage.setItem('username', res.data.username);
+      localStorage.setItem('username', username);
       onLogin();
     } catch (err) {
       const msg = err.response?.data?.error || 'Login failed. Please try again.';
